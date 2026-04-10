@@ -21,7 +21,7 @@ jobs:
           pip install pytest behave allure-pytest pyserial
 
       - name: Run tests (mock mode)
-        run: pytest -q --maxfail=1 --disable-warnings --alluredir=reports
+        PYTHONPATH=. pytest -q --maxfail=1 --disable-warnings --alluredir=reports
 
       - name: Upload test report
         uses: actions/upload-artifact@v4
